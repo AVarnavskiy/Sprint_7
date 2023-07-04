@@ -3,14 +3,10 @@ package tests;
 import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import models.requests.CreateCourierRequest;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import utils.GenerateData;
-
-import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;

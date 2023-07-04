@@ -2,7 +2,6 @@ package tests;
 
 import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import models.responses.CreateOrdersResponse;
 import models.responses.OrdersResponse;
@@ -12,8 +11,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.instanceOf;
-import static org.hamcrest.CoreMatchers.is;
 
 public class OrdersTest extends BaseTest {
 

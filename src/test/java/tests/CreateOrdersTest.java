@@ -2,19 +2,12 @@ package tests;
 
 import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.http.ContentType;
-import models.requests.CreateOrdersRequest;
 import models.responses.CreateOrdersResponse;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Random;
-
-import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.*;
 
 @RunWith(Parameterized.class)

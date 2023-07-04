@@ -7,7 +7,6 @@ import models.requests.CreateCourierRequest;
 import models.requests.LoginCourierRequest;
 import org.junit.After;
 import org.junit.Test;
-import utils.GenerateData;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.*;
