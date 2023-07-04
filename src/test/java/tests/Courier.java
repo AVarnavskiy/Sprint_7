@@ -1,7 +1,9 @@
 package tests;
 
+import com.github.javafaker.Faker;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import models.requests.CreateCourierRequest;
 import models.requests.LoginCourierRequest;
 import models.responses.LoginCourierResponse;
 
@@ -12,12 +14,19 @@ public class Courier {
 
     public static void deleteCourier(String courierLogin, String courierPassword) {
         int id = getCourierId(courierLogin, courierPassword);
-        given()
-        .log().all()
-        .when()
-        .delete("/api/v1/courier/" + id)
-        .then()
-        .statusCode(200);
+
+        if(id > 0) {
+            given()
+                .log().all()
+                .when()
+                .delete("/api/v1/courier/" + id)
+                .then()
+                .statusCode(200);
+
+            System.out.printf("Курьер %s успешно удален", courierLogin);
+        } else {
+            System.out.printf("Курьер %s не найден в БД", courierLogin);
+        }
     }
 
     private static int getCourierId(String courierLogin, String courierPassword) {
@@ -29,6 +38,7 @@ public class Courier {
                 .when()
                 .post(LoginCourierTest.ENDPOINT);
 
-        return response.as(LoginCourierResponse.class).getId();
+            return response.as(LoginCourierResponse.class).getId();
     }
+
 }
